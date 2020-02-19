@@ -1,10 +1,120 @@
-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fafafa;
+  color: #1a1a1a;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  outline-style: none;
+}
+
+a {
+  text-decoration: none;
+  /* color: #1a1a1a; */
+}
+
+a:visited {
+  /* color: #1a1a1a; */
+}
+
+.semi-bold {
+  font-weight: 500;
 }
 
 h1 {
+  font-size: 3.2rem;
   font-weight: bold;
+  color: #f56b2a;
+}
+
+h2 {
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  color: #2e3333;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: #2e3333;
+  margin-bottom: 6px;
+}
+
+.container {
+  /* min-height: calc(100vh-60-125); */
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+header {
+  background-color: #202020;
+  height: 100px;
+  display: flex;
+}
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .container a.logo {
+  margin: 5px 0;
+}
+
+header .container nav {
+  width: 100%;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+header nav ul li {
+  display: flex;
+}
+
+header nav ul li a {
+  padding: 3px 7px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+footer {
+  background-color: #202020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  text-align: center;
+  color: white;
 }
