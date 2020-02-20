@@ -17,7 +17,7 @@ function App() {
         <Header />
         <div className="container">
           <Switch>
-            <Route path="/personnages">
+            <Route path="/personnages/:p?">
               <Character />
             </Route>
             <Route path="/">

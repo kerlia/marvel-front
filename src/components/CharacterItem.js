@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink, Link, useHistory } from "react-router-dom";
 
 function CharacterItem({ name, thumbnail, description }) {
   return (
     <li>
-      <a href="#">
+      <Link to="#">
         <div className="ima">
           <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
         </div>
@@ -11,7 +12,7 @@ function CharacterItem({ name, thumbnail, description }) {
           <h2>{name}</h2>
           <p>{description}</p>
         </div>
-      </a>
+      </Link>
     </li>
   );
 }
