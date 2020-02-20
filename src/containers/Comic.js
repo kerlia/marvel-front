@@ -5,17 +5,25 @@ import axios from "axios";
 import ComicItem from "../components/ComicItem";
 
 function Comic() {
-  const LIMIT = 10;
+  const LIMIT = 100;
 
   const { id, p } = useParams();
   const page = p ? parseInt(p) : 1;
+  console.log(">>>>>>> id", id);
   console.log(">>> page >>>>> ", page);
 
   const [isLoading, setIsLoading] = useState(true);
   const [comics, setComics] = useState([]);
   const [count, setCount] = useState(0);
 
-  const API = process.env.REACT_APP_API + "/characters/" + id + "/comics";
+  let API = process.env.REACT_APP_API;
+
+  if (id) {
+    API += "/characters/" + id + "/comics";
+  } else {
+    API += "/comics";
+  }
+
   console.log(">>>>>>> API", API);
 
   const apiUrl = API + "?limit=" + LIMIT + "&offset=" + (page - 1) * LIMIT;
@@ -38,11 +46,27 @@ function Comic() {
   }, [page]);
 
   let pager = [];
+  let nbPageLink = Math.ceil(count / LIMIT);
+  console.log(">>>>>>> nb", nbPageLink);
+  const nbMax = 30;
+  let nbStart = 0;
+  if (nbPageLink > nbMax) {
+    if (page > nbMax) {
+      nbStart = Math.abs((nbMax - page) / 2);
+    }
+  }
+
   for (let i = 0; i * LIMIT < count; i * LIMIT) {
     i++;
+    let baseUrl = "";
+    if (id) {
+      baseUrl = "/personnages/" + id + "/comics";
+    } else {
+      baseUrl = "/comics";
+    }
     pager.push(
       <li key={i} className={page === i && "selected"}>
-        <Link to={`/personnages/${id}/comics/${i}`}>{i}</Link>
+        <Link to={`${baseUrl}/${i}`}>{i}</Link>
       </li>
     );
   }

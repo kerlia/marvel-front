@@ -14,25 +14,20 @@ function Header() {
           <ul>
             <li>
               <NavLink
-                to="/"
-                exact={true} // activeClassName="selected" // className="menu-search"
+                to="/personnages"
+                activeClassName="selected"
+                exact={true}
               >
                 PERSONNAGES
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/"
-                exact={true} // activeClassName="selected" // className="menu-search"
-              >
+              <NavLink to="/comics" activeClassName="selected" exact={true}>
                 COMICS
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/"
-                exact={true} // activeClassName="selected" // className="menu-search"
-              >
+              <NavLink to="/favoris" activeClassName="selected" exact={true}>
                 FAVORIS
               </NavLink>
             </li>

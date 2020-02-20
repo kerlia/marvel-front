@@ -208,12 +208,13 @@ ul.paging {
   all: unset;
   display: flex;
   justify-content: center;
+  /* flex-wrap: wrap; */
+  overflow-x: scroll;
 }
 
 ul.paging li {
   all: unset;
   margin-right: 5px;
-  /* border: 1px solid #ccc; */
   border-radius: 3px;
   padding: 3px;
   background-color: white;
