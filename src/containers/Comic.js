@@ -5,7 +5,7 @@ import axios from "axios";
 import ComicItem from "../components/ComicItem";
 import Search from "../components/Search";
 
-function Comic() {
+function Comic({ search, setSearch }) {
   const LIMIT = 100;
 
   const { id, p } = useParams();
@@ -17,24 +17,28 @@ function Comic() {
   const [comics, setComics] = useState([]);
   const [count, setCount] = useState(0);
 
-  let API = process.env.REACT_APP_API;
+  let API = "";
 
-  if (id) {
-    API += "/characters/" + id + "/comics";
+  if (search) {
+    API = process.env.REACT_APP_API + "/search?type=comics&q=" + search + "&";
   } else {
-    API += "/comics";
+    if (id) {
+      API += process.env.REACT_APP_API + "/characters/" + id + "/comics?";
+    } else {
+      API += process.env.REACT_APP_API + "/comics?";
+    }
   }
 
-  console.log(">>>>>>> API", API);
+  API += "limit=" + LIMIT + "&offset=" + (page - 1) * LIMIT;
 
-  const apiUrl = API + "?limit=" + LIMIT + "&offset=" + (page - 1) * LIMIT;
+  console.log(">>>>>>> API", API);
 
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
       try {
-        console.log(">>>>>>> api", apiUrl);
-        const response = await axios.get(apiUrl);
+        console.log(">>>>>>> api", API);
+        const response = await axios.get(API);
         console.log(">>>>>>> response.data", response.data);
         setCount(response.data.total);
         setComics(response.data.results);
@@ -79,7 +83,7 @@ function Comic() {
         <p>...Loading</p>
       ) : (
         <>
-          <Search />
+          <Search search={search} setSearch={setSearch} />
           <div className="character">
             <div>
               <h1>Comics</h1>

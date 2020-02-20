@@ -5,7 +5,7 @@ import axios from "axios";
 import CharacterItem from "../components/CharacterItem";
 import Search from "../components/Search";
 
-function Character() {
+function Character({ search, setSearch }) {
   const LIMIT = 50;
 
   const { p } = useParams();
@@ -16,17 +16,23 @@ function Character() {
   const [characters, setCharacters] = useState([]);
   const [count, setCount] = useState(0);
 
-  const API = process.env.REACT_APP_API + "/characters";
-  console.log(">>>>>>> API", API);
+  let API = "";
 
-  const apiUrl = API + "?limit=" + LIMIT + "&offset=" + (page - 1) * LIMIT;
+  if (search) {
+    API =
+      process.env.REACT_APP_API + "/search?type=characters&q=" + search + "&";
+  } else {
+    API += process.env.REACT_APP_API + "/characters?";
+  }
+
+  API += "limit=" + LIMIT + "&offset=" + (page - 1) * LIMIT;
 
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
       try {
-        console.log(">>>>>>> api", apiUrl);
-        const response = await axios.get(apiUrl);
+        console.log(">>>>>>> api", API);
+        const response = await axios.get(API);
         console.log(">>>>>>> response.data", response.data);
         setCount(response.data.total);
         setCharacters(response.data.results);
@@ -55,7 +61,7 @@ function Character() {
         <p>...Loading</p>
       ) : (
         <>
-          <Search />
+          <Search search={search} setSearch={setSearch} />
           <div className="character">
             <div>
               <h1>Personnages</h1>

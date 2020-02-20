@@ -3,7 +3,7 @@ import { NavLink, Link, useHistory } from "react-router-dom";
 
 import logo from "../img/logo.svg";
 
-function Header() {
+function Header({ modal, setModal }) {
   return (
     <header>
       <div className="container">
@@ -30,6 +30,16 @@ function Header() {
               <NavLink to="/favoris" activeClassName="selected" exact={true}>
                 FAVORIS
               </NavLink>
+            </li>
+            <li>
+              <button
+                onClick={e => {
+                  // const modal = true;
+                  setModal(true);
+                }}
+              >
+                LOGIN
+              </button>
             </li>
           </ul>
         </nav>
