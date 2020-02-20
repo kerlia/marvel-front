@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./containers/Home";
 import Character from "./containers/Character";
+import Comic from "./containers/Comic";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -27,10 +28,13 @@ function App() {
         <Header />
         <div className="container">
           <Switch>
+            <Route path="/personnages/:id/comics/:p?">
+              <Comic />
+            </Route>
             <Route path="/personnages/:p?">
               <Character />
             </Route>
-            <Route path="/">
+            <Route>
               <Home />
             </Route>
           </Switch>

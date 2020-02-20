@@ -1,16 +1,16 @@
 import React from "react";
 import { NavLink, Link, useHistory } from "react-router-dom";
 
-function CharacterItem({ id, name, thumbnail, description }) {
-  const link = "/personnages/" + id + "/comics";
+function ComicItem({ id, title, thumbnail, description }) {
+  // const link = "/personnages/" + id + "/comics";
   return (
     <li>
-      <Link to={link}>
+      <Link to="#">
         <div className="ima">
-          <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} />
+          <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} />
         </div>
         <div className="info">
-          <h2>{name}</h2>
+          <h2>{title}</h2>
           <p>
             {id} - {description}
           </p>
@@ -20,4 +20,4 @@ function CharacterItem({ id, name, thumbnail, description }) {
   );
 }
 
-export default CharacterItem;
+export default ComicItem;
