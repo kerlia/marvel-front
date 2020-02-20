@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, Link, useParams } from "react-router-dom";
 import axios from "axios";
 import ComicItem from "../components/ComicItem";
+import Search from "../components/Search";
 
 function Comic() {
   const LIMIT = 100;
@@ -78,6 +79,7 @@ function Comic() {
         <p>...Loading</p>
       ) : (
         <>
+          <Search />
           <div className="character">
             <div>
               <h1>Comics</h1>

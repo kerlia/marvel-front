@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, Link, useParams } from "react-router-dom";
 import axios from "axios";
 import CharacterItem from "../components/CharacterItem";
+import Search from "../components/Search";
 
 function Character() {
   const LIMIT = 50;
@@ -54,12 +55,12 @@ function Character() {
         <p>...Loading</p>
       ) : (
         <>
+          <Search />
           <div className="character">
             <div>
               <h1>Personnages</h1>
               <span>{count} au total</span>
             </div>
-
             <ul className="paging">{pager}</ul>
             <ul>
               {characters.map((character, _) => {
