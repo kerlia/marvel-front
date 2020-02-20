@@ -160,7 +160,7 @@ footer p {
   display: flex;
   flex-direction: row;
   width: 48.7%;
-  height: 170px;
+  height: 200px;
   margin: 15px 0;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -391,7 +391,7 @@ div.main-form h1 {
   text-align: center;
   font-weight: bold;
   color: #1a1a1a;
-  border-bottom: 3px solid #f56b2a;
+  border-bottom: 3px solid rgb(32, 32, 32);
   padding-bottom: 20px;
   margin-bottom: 25px;
 }
@@ -446,25 +446,26 @@ div.signup form label {
 
 div.main-form form input.btn-login,
 div.signup form input.btn-login {
-  background-color: rgb(65, 131, 215);
+  background-color: rgb(32, 32, 32);
   margin-bottom: 35px;
   margin-top: 5px;
 }
 
 div.main-form form input.btn-login:hover,
 div.signup form input.btn-login:hover {
-  background-color: rgba(65, 131, 215, 0.9);
+  background-color: rgba(32, 32, 32, 0.9);
 }
 
 div.main-form .btn-new-account {
   width: 100%;
   background-color: white;
-  color: rgb(65, 131, 215);
-  border: 1px solid rgb(65, 131, 215);
+  color: rgb(32, 32, 32);
+  border: 1px solid rgb(32, 32, 32);
   margin-top: 30px;
 }
+
 div.main-form .btn-new-account:hover {
-  background-color: rgb(65, 131, 215);
+  background-color: rgb(32, 32, 32);
   color: white;
 }
 

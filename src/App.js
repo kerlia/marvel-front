@@ -63,10 +63,10 @@ function App() {
             }}
           >
             <Login
-            // user={user}
-            // setUser={setUser}
-            // modal={modal}
-            // setModal={setModal}
+              // user={user}
+              // setUser={setUser}
+              modal={modal}
+              setModal={setModal}
             />
           </div>
         )}

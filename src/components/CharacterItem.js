@@ -11,9 +11,7 @@ function CharacterItem({ id, name, thumbnail, description }) {
         </div>
         <div className="info">
           <h2>{name}</h2>
-          <p>
-            {id} - {description}
-          </p>
+          <p>{description}</p>
         </div>
       </Link>
     </li>

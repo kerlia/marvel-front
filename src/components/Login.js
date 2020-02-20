@@ -58,7 +58,7 @@ function Login({ user, setUser, modal, setModal }) {
 
   return (
     <div className="login main-form">
-      <span
+      {/* <span
         className="fa-stack close"
         onClick={e => {
           setModal(false);
@@ -69,7 +69,7 @@ function Login({ user, setUser, modal, setModal }) {
           className="fa-stack-1x blue rotate"
           icon="times-circle"
         />
-      </span>
+      </span> */}
 
       <h1>Connexion</h1>
       {/* onSubmit={props.handleSubmit} */}

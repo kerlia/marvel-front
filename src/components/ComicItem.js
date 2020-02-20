@@ -11,9 +11,7 @@ function ComicItem({ id, title, thumbnail, description }) {
         </div>
         <div className="info">
           <h2>{title}</h2>
-          <p>
-            {id} - {description}
-          </p>
+          <p>{description}</p>
         </div>
       </Link>
     </li>
