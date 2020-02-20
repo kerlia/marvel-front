@@ -55,7 +55,11 @@ function Character() {
       ) : (
         <>
           <div className="character">
-            <h1>Personnages {count}</h1>
+            <div>
+              <h1>Personnages</h1>
+              <span>{count} au total</span>
+            </div>
+
             <ul className="paging">{pager}</ul>
             <ul>
               {characters.map((character, _) => {
@@ -64,7 +68,6 @@ function Character() {
             </ul>
             <ul className="paging">{pager}</ul>
           </div>
-          <div></div>
         </>
       )}
     </>

@@ -10,6 +10,16 @@ import Footer from "./components/Footer";
 import Home from "./containers/Home";
 import Character from "./containers/Character";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faCircle,
+  faUser,
+  faSearch,
+  faPlusSquare
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faCircle, faUser, faSearch, faPlusSquare);
+
 function App() {
   return (
     <>

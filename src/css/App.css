@@ -33,7 +33,7 @@ h1 {
   font-weight: bold;
   color: #202020;
   font-family: "Roboto Condensed", sans-serif;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 
 h2 {
@@ -125,10 +125,18 @@ footer p {
   font-size: 2rem;
 }
 
-.character {
-  /* background-color: red; */
+.character > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
+.character > div span {
+  margin-left: 15px;
+  background-color: white;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
 .character ul {
   display: flex;
   flex-direction: row;
@@ -139,7 +147,7 @@ footer p {
 .character ul li {
   display: flex;
   flex-direction: row;
-  width: 48%;
+  width: 48.7%;
   height: 170px;
   margin: 15px 0;
   background-color: white;
